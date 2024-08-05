@@ -1,0 +1,25 @@
+.container {
+  margin-bottom: 30px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 380px;
+  max-height: 110px;
+}
+
+.title {
+  font-size: 32px;
+  padding-left: 50px;
+  text-align: center;
+  margin: 0;
+  color: #100600;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin: 0;
+  color: #653622;
+}
