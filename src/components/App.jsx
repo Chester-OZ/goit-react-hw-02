@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import 'modern-normalize'
 import Description from './Description/Description'
 import Feedback from './Feedback/Feedback'
 import Options from './Options/Options'
-import 'modern-normalize'
+import Notification from './Notification/Notification'
 
 export default function App() {
   const optionsButtons = ['good', 'neutral', 'bad']
@@ -53,7 +54,7 @@ export default function App() {
                   positive={positiveFeedback}
                 />
               ) : (
-                <p className="noFeedback">No feedback yet</p>
+                <Notification />
               )}
             </div>
           </div>
