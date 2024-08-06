@@ -1,6 +1,10 @@
 import css from './Feedback.module.css'
 
-function Feedback({ feedback: { good, neutral, bad }, total, positive }) {
+export default function Feedback({
+  feedback: { good, neutral, bad },
+  total,
+  positive,
+}) {
   const feedback = [
     { label: 'Good', value: good },
     { label: 'Neutral', value: neutral },
@@ -23,15 +27,11 @@ function Feedback({ feedback: { good, neutral, bad }, total, positive }) {
         <p>Total: {total}</p>
         <p>
           Positive:{' '}
-          {positive > 0 ? (
+          {positive > 0 && (
             <span className={css.textPositive}>{positive}%</span>
-          ) : (
-            ''
           )}
         </p>
       </div>
     </div>
   )
 }
-
-export default Feedback

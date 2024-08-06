@@ -5,32 +5,30 @@ import Feedback from './Feedback/Feedback'
 import Options from './Options/Options'
 import 'modern-normalize'
 
-function App() {
+export default function App() {
   const optionsButtons = ['good', 'neutral', 'bad']
-  const declarationFeedback = { good: 0, neutral: 0, bad: 0 }
+  const initialFeedback = { good: 0, neutral: 0, bad: 0 }
 
-  const [feedback, setFeedback] = useState(() => {
+  const getStorageFeedback = () => {
     const savedFeedback = localStorage.getItem('savedFeedback')
-    return savedFeedback !== null
-      ? JSON.parse(savedFeedback)
-      : declarationFeedback
-  })
+    return savedFeedback !== null ? JSON.parse(savedFeedback) : initialFeedback
+  }
+
+  const [feedback, setFeedback] = useState(getStorageFeedback)
 
   const updateFeedback = (feedbackType) => {
     document.activeElement.blur()
 
-    if (feedbackType === 'reset') {
-      setFeedback(declarationFeedback)
-    } else {
-      setFeedback((prev) => ({
-        ...prev,
-        [feedbackType]: prev[feedbackType] + 1,
-      }))
-    }
+    setFeedback((prev) =>
+      feedbackType === 'reset'
+        ? initialFeedback
+        : { ...prev, [feedbackType]: prev[feedbackType] + 1 }
+    )
   }
 
   const totalFeedback = feedback.good + feedback.neutral + feedback.bad
-  const positiveFeedback = Math.round((feedback.good / totalFeedback) * 100)
+  const positiveFeedback =
+    feedback.good > 0 ? Math.round((feedback.good / totalFeedback) * 100) : 0
 
   useEffect(() => {
     localStorage.setItem('savedFeedback', JSON.stringify(feedback))
@@ -64,5 +62,3 @@ function App() {
     </>
   )
 }
-
-export default App

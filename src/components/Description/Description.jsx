@@ -1,6 +1,6 @@
 import css from './Description.module.css'
 
-function Description() {
+export default function Description() {
   return (
     <div className={css.container}>
       <h1 className={css.title}>Sip Happens Café</h1>
@@ -11,5 +11,3 @@ function Description() {
     </div>
   )
 }
-
-export default Description

@@ -1,7 +1,7 @@
 import css from './Options.module.css'
 import clsx from 'clsx'
 
-function Options({ buttons, updateFeedback, total }) {
+export default function Options({ buttons, updateFeedback, total }) {
   return (
     <div className={css.options}>
       {buttons.map((button, idx) => {
@@ -26,5 +26,3 @@ function Options({ buttons, updateFeedback, total }) {
     </div>
   )
 }
-
-export default Options
