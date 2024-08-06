@@ -23,3 +23,12 @@
   flex-direction: column;
   padding: 200px;
 }
+
+.noFeedback {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+  margin: 0;
+  color: #100600;
+}

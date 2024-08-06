@@ -1,0 +1,25 @@
+.list {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 40px;
+}
+
+.text {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin: 0;
+  color: #653622;
+}
+
+.textTitle {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin: 0;
+  color: #653622;
+}
+
+.textPositive {
+  color: #03863a;
+}

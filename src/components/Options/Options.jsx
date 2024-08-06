@@ -1,17 +1,28 @@
 import css from './Options.module.css'
 import clsx from 'clsx'
 
-function Options({ buttons }) {
+function Options({ buttons, updateFeedback, total }) {
   return (
     <div className={css.options}>
       {buttons.map((button, idx) => {
         return (
-          <button key={idx} className={css.buttons}>
+          <button
+            onClick={() => updateFeedback(button)}
+            key={idx}
+            className={css.buttons}
+          >
             {button}
           </button>
         )
       })}
-      <button className={clsx(css.buttons, css.reset)}>reset</button>
+      {total > 0 && (
+        <button
+          onClick={() => updateFeedback('reset')}
+          className={clsx(css.buttons, css.reset)}
+        >
+          reset
+        </button>
+      )}
     </div>
   )
 }

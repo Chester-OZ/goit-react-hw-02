@@ -1,31 +1,35 @@
 .options {
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 20px;
 }
 
 .buttons {
   display: block;
+  text-transform: capitalize;
   width: 80px;
   height: 80px;
   border-radius: 50%;
   padding: 0;
-  border: none;
+  border: 10px solid #b16f5037;
   outline: none;
-  background-color: #945b40;
+  background-color: #7c4d37;
   color: #f8f3e0;
   box-shadow: 10px 5px 5px #f8f3e040, -10px -5px 5px #f8f3e040;
 }
 
 .buttons:hover,
 .buttons:focus {
-  box-shadow: inset 10px -10px 20px 5px #68311d2c,
-    inset -10px 10px 20px 5px #68311d38, 10px -10px 20px 5px #f8f3e07e,
-    -10px 10px 20px 5px #f8f3e07e;
+  color: #fafafa;
+  box-shadow: inset 10px -10px 20px 5px #5428182c,
+    inset -10px 10px 20px 5px #5428182c, 10px -10px 20px 5px #fffaea7e,
+    -10px 10px 20px 5px #fffaea7e;
 }
 
 .reset {
   background-color: #650505;
   color: #f8f3e0;
+  border: 10px solid #861616;
   position: absolute;
   top: 56px;
   right: 82px;
@@ -34,6 +38,6 @@
 .reset:hover,
 .reset:focus {
   box-shadow: inset 10px -10px 20px 5px #3d02023d,
-    inset -10px 10px 20px 5px #3d02023d, 10px -10px 20px 5px #f8f3e07e,
-    -10px 10px 20px 5px #f8f3e07e;
+    inset -10px 10px 20px 5px #3d02023d, 10px -10px 20px 5px #fffaea7e,
+    -10px 10px 20px 5px #fffaea7e;
 }
